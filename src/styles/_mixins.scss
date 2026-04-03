@@ -1,0 +1,86 @@
+// @mixin flexRegular($direction, $space) {
+//   display: flex;
+//   justify-content: $space;
+//   align-items: center;
+//   flex-direction: $direction;
+//   transition: .3s ease-in;
+// }
+// @mixin gridRegular($gap) {
+//   display: grid;
+//   gap: $gap;
+// }
+// @mixin buttonRegular($buttonBack, $width, $height) {
+//   transition: 0.4s ease-in;
+//   background: $buttonBack;
+//   border-radius: 42px;
+//   box-sizing: border-box;
+//   width: $width;
+//   height: $height;
+//   color: #fff;
+//   outline: none;
+// }
+// @mixin transitionRegular(){
+//   transition: .4s ease-in-out;
+// }
+
+@mixin flexRegular($direction, $space) {
+  display: flex;
+  justify-content: $space;
+  align-items: center;
+  flex-direction: $direction;
+  transition: 0.3s ease-in;
+}
+@mixin gridRegular($gap) {
+  display: grid;
+  gap: $gap;
+}
+@mixin btnRegular($buttonBack, $width) {
+  transition: 0.2s ease-in;
+  background: $buttonBack;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: $width;
+  height: 49px;
+  outline: none;
+  border: 0;
+  font-family: Raleway;
+}
+@mixin btnOutline($buttonBack, $width) {
+  transition: 0.2s ease-in;
+  background: $buttonBack;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: $width;
+  height: 52px;
+  color: #fff;
+  border: 1px solid #ffffff;
+}
+@mixin buttonRegularIn($buttonBack, $width, $height) {
+  transition: 0.4s ease-in;
+  background: $buttonBack;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: $width;
+  height: $height;
+  // color: #fff;
+  outline: none;
+  border: 0;
+}
+@mixin transitionRegular() {
+  transition: 0.4s ease-in-out;
+}
+@mixin responsiveIpad() {
+  @media (max-width: 1080px) {
+  }
+  //transition: 0.4s ease-in-out;
+}
+
+@mixin buttonCh($bcolor, $url, $x1, $y1, $bor, $col) {
+  background: $bcolor;
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+  border: $bor;
+  color: $col;
+}

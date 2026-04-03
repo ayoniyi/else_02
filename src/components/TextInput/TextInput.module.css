@@ -1,0 +1,166 @@
+.double .field {
+  margin-right: 0 !important;
+}
+
+.inputBox {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+}
+
+.inputBox .field {
+  padding-top: 20px;
+  -webkit-transition: 0.4s ease-in;
+  transition: 0.4s ease-in;
+  background: none;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  border: 0;
+  padding-left: 1em;
+  border: 1px solid #ebedef;
+  border-radius: 4px;
+  outline: none;
+  background: #fff;
+}
+
+.inputBox .fieldErr {
+  border: 1px solid #d41d28;
+}
+
+.inputBox label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.inputBox label::after {
+  content: "";
+  left: 0;
+  bottom: -1px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+}
+
+.inputBox label .contentName {
+  position: absolute;
+  bottom: 17px;
+  left: 0.8em;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 0.9em;
+  color: gray;
+  padding-left: 0.5em;
+}
+
+.inputBox .closeM {
+  cursor: pointer;
+}
+
+.inputBox input {
+  padding-left: 1em;
+  padding-bottom: 1em;
+  background: pink;
+}
+
+.inputBox input:focus {
+  border: 1px solid #6aa9cb;
+  border-radius: 4px;
+}
+
+.inputBox input:focus + .labelName .contentName,
+.inputBox input:valid + .labelName .contentName {
+  -webkit-transform: translateY(-120%);
+          transform: translateY(-120%);
+  font-size: 0.8em;
+  background: #fff;
+  margin-left: 0.5em;
+  padding: 0 0.5em;
+}
+
+.inputBox input:not(:placeholder-shown) + .labelName .contentName {
+  -webkit-transform: translateY(-120%);
+          transform: translateY(-120%);
+  font-size: 0.8em;
+  margin-left: 0.5em;
+  padding: 0 0.5em;
+}
+
+.inputBox input:focus + .labelName::after,
+.inputBox input:valid + .labelName::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+@media (max-width: 780px) {
+  .inputBox label .contentName {
+    bottom: 12px;
+  }
+}
+
+@media (max-width: 755px) {
+  .inputBox label .contentName {
+    bottom: 45px;
+  }
+  .double label .contentName {
+    bottom: 10px !important;
+  }
+  .double .field {
+    width: 65vw !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .inputBox label .contentName {
+    bottom: 15px;
+  }
+  .inputBox input:focus + .labelName .contentName,
+  .inputBox input:valid + .labelName .contentName {
+    -webkit-transform: translateY(-145%);
+            transform: translateY(-145%);
+    padding: 0 0.5em;
+  }
+  .inputBox input:not(:placeholder-shown) + .labelName .contentName {
+    -webkit-transform: translateY(-145%);
+            transform: translateY(-145%);
+    padding: 0 0.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .double .field {
+    width: 77vw !important;
+  }
+}
+/*# sourceMappingURL=TextInput.module.css.map */

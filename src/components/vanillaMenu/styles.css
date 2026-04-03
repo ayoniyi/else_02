@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap");
+
+:root {
+  --base-100: #fff;
+  --base-200: #474437;
+  --base-300: #403d31;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+a,
+p {
+  text-decoration: none;
+  color: var(--base-100);
+  font-weight: 450;
+  line-height: 1;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  background: url(/hero.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero h1 {
+  width: 50%;
+  text-align: center;
+  color: var(--base-100);
+  font-family: "Instrument Serif", sans-serif;
+  font-size: clamp(3rem, 10vw, 12rem);
+  font-weight: 500;
+  line-height: 0.75;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+nav > div {
+  flex: 1;
+}
+
+nav .nav-logo {
+  display: flex;
+  justify-content: center;
+}
+
+nav .nav-logo a {
+  width: 8rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+nav .nav-cta {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav .nav-cta a {
+  font-family: "Instrument Serif", sans-serif;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 5rem;
+}
+
+nav .nav-toggle-btn {
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+nav .nav-toggle-btn span {
+  width: 100%;
+  height: 1.25px;
+  background: var(--base-100);
+  will-change: transform;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.menu.active {
+  pointer-events: all;
+}
+
+.menu .menu-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.menu .menu-bg-left,
+.menu .menu-bg-right {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu .menu-bg-left {
+  left: 0;
+}
+
+.menu .menu-bg-right {
+  right: 0;
+}
+
+.menu .menu-bg-left-inner,
+.menu .menu-bg-right-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.menu .menu-bg-left-inner {
+  background-color: var(--base-200);
+  transform-origin: 100% 50%;
+  transform: rotate(180deg) scale(2, 2);
+}
+
+.menu .menu-bg-right-inner {
+  background-color: var(--base-300);
+  transform-origin: 0% 50%;
+  transform: rotate(-180deg) scale(2, 2);
+}
+
+.menu .menu-items {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.menu .menu-items-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu .menu-items-col:nth-child(1) a {
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 2.5vw, 4rem);
+  line-height: 1.1;
+}
+
+.menu .menu-items-col:nth-child(2) a {
+  font-family: "Instrument Serif", sans-serif;
+  font-size: clamp(1.65rem, 2.75vw, 3rem);
+  line-height: 1.2;
+}
+
+.menu .menu-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.menu .menu-footer-col {
+  display: flex;
+  gap: 2rem;
+}
+
+.menu .menu-footer a,
+.menu .menu-footer p {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.menu a .line,
+.menu p .line {
+  position: relative;
+  transform: translateY(110%);
+  will-change: transform;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  nav .nav-toggle {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  nav .nav-logo {
+    justify-content: flex-start;
+  }
+
+  nav .nav-logo a {
+    text-align: left;
+  }
+
+  nav .nav-cta {
+    display: none;
+  }
+
+  .menu .menu-bg-right {
+    display: none;
+  }
+
+  .menu .menu-bg-left {
+    width: 100%;
+  }
+
+  .menu .menu-items {
+    padding: 6rem 2rem;
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
+
+  .menu .menu-items-col {
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .menu .menu-items-col:nth-child(1) {
+    justify-content: flex-start;
+  }
+
+  .menu .menu-items-col:nth-child(2) {
+    justify-content: flex-end;
+  }
+
+  .menu .menu-footer {
+    padding: 2rem 2rem;
+    align-items: flex-end;
+  }
+
+  .menu .menu-footer-col {
+    flex-direction: column;
+    gap: 0;
+  }
+}

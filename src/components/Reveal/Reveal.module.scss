@@ -1,0 +1,118 @@
+.container {
+  background: #000;
+  // color: #fff;
+  height: 100vh;
+  width: 100vw;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+}
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #000;
+  -webkit-text-stroke: 2px #ffffff29;
+}
+.title h1 {
+  font-size: 20vw;
+  font-weight: 400;
+  font-family: "Geist";
+  font-family: Presicav-Rg;
+  letter-spacing: -4px;
+}
+.perc {
+  font-size: 4rem;
+  margin-top: 0.4em;
+  color: #ffffff1a;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.block {
+  width: 100%;
+  height: 100%;
+  background-color: #303030;
+  background-color: #000;
+}
+.counter {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  right: 2em;
+  /* transform: translate(-50% -50%); */
+  // transform: translateX(-50%);
+  z-index: 2;
+  color: #ffffff5f;
+}
+.count {
+  position: absolute;
+  right: 0;
+  /* top: 50%; */
+  //left: 50%;
+  /* transform: translate(-50% -50%); */
+  //transform: translateX(-50%);
+  display: flex;
+  //border: 1px solid red;
+  // overflow: hidden;
+}
+.digit {
+  flex: 1;
+  padding-top: 1rem;
+}
+
+.count .digit h1 {
+  font-size: 15rem;
+  font-size: 5rem;
+  font-weight: 400;
+}
+
+.count .digit {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.count .digit h1 {
+  position: relative;
+  transform: translateY(140%);
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .count .digit h1 {
+    font-size: 3.5rem;
+  }
+  .perc {
+    font-size: 3.5rem;
+    margin-top: 0.25em;
+  }
+}
+
+@media (max-width: 435px) {
+  .title h1 {
+    font-size: 35vw;
+  }
+  .counter {
+    //border: 1px solid red;
+  }
+  .count .digit h1 {
+    font-size: 3rem;
+    position: relative;
+    transform: translateY(250%);
+    will-change: transform;
+    margin-top: -5px;
+  }
+
+  .perc {
+    font-size: 2rem;
+    margin-top: 0.25em;
+  }
+}

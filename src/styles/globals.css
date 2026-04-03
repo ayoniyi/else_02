@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+@font-face {
+  font-family: Ethic;
+  src: url(../../public/fonts/EthicNew-Regular.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: Satoshi-Black;
+  src: url(/fonts/Satoshi/Satoshi-Black.otf);
+  font-display: swap;
+}
+@font-face {
+  font-family: Satoshi-BlackItalic;
+  src: url(/fonts/Satoshi/Satoshi-BlackItalic.otf);
+  font-display: swap;
+}
+@font-face {
+  font-family: Satoshi-Reg;
+  src: url(/fonts/Satoshi/Satoshi-Regular.otf);
+  font-display: swap;
+}
+@font-face {
+  font-family: Satoshi-Mid;
+  src: url(/fonts/Satoshi/Satoshi-Medium.otf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Satoshi-Light;
+  src: url(/fonts/Satoshi/Satoshi-Light.otf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Presicav-Rg;
+  src: url(/fonts/Presicav/presicav_reg.otf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Presicav-Light;
+  src: url(/fonts/Presicav/presicav_light.otf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Beauty-Rg;
+  src: url(/fonts/Beauty_regular/Beauty_regular.otf);
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  /* background-color: #ffffff; */
+  background-color: #000;
+  font-family: Satoshi-Reg, "Geist Mono", monospace;
+  font-display: swap;
+  transition: none !important;
+}
+[data-framer-motion] {
+  will-change: transform, opacity, scale, x, y, z;
+  transform: translateZ(0);
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+button {
+  cursor: pointer;
+}
+
+/* canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+} */
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-title .char span {
+  position: relative;
+  display: inline-block;
+  transform: translateY(200%);
+  will-change: transform;
+}
+
+/* INNER */
+/* .inner {
+  background-color: black;
+}
+.inner .page {
+  background-color: white;
+  height: 100vh;
+}
+.inner .slide {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100vw;
+  height: 100vh;
+} */
+
+/* Reveal */
+/* @import url("https://fonts.cdnfonts.com/css/pp-neue-montreal"); */
+
+.counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.digit {
+  flex: 1;
+  padding-top: 1rem;
+}
+
+.count .digit h1 {
+  font-size: 15rem;
+  font-weight: 400;
+}
+
+.count .digit {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.count .digit h1 {
+  position: relative;
+  transform: translateY(120%);
+  will-change: transform;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .cta {
+    width: 90%;
+  }
+}
+
+/* INNER */
+.inner {
+  background-color: black;
+}
+.inner .page {
+  background-color: white;
+  height: 100vh;
+}
+.inner .slide {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+:root {
+  --ease-out-expo: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+::view-transition-old(visual-container) {
+  animation: 1.6s var(--ease-out-expo) both visualExit;
+}
+
+::view-transition-new(visual-container) {
+  animation: 1.6s var(--ease-out-expo) both visualEnter;
+}
+
+::view-transition-old(page-text) {
+  animation: 1s var(--ease-out-expo) both textExit;
+}
+
+::view-transition-new(page-text) {
+  animation: 1s var(--ease-out-expo) both textEnter;
+}

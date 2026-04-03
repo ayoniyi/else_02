@@ -1,0 +1,82 @@
+// Page wrapper - root element for AnimatePresence page transitions
+.pageWrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.cover {
+  background: #000;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  pointer-events: none;
+  // z-index: -1;
+}
+.coverTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #000;
+  -webkit-text-stroke: 2px #ffffff29;
+
+  h1 {
+    font-size: 20vw;
+    font-weight: 400;
+    font-family: "Geist";
+
+    font-family: Presicav-Rg;
+
+    letter-spacing: -4px;
+  }
+}
+.coverBtm {
+  position: absolute;
+  bottom: 4.5vh;
+  // left: 50%;
+  right: 2em;
+  /* transform: translate(-50% -50%); */
+  // transform: translateX(-50%);
+  z-index: 2;
+  color: #ffffff5f;
+  width: fit-content;
+  h2 {
+    font-size: 5rem;
+    font-weight: 400;
+  }
+}
+.container {
+  width: 100%;
+  // height: 600vh;
+  //   transform: scale(0.9);
+  height: 100vh;
+  background-color: #ffffff;
+  // background-color: #000;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .count .digit h1 {
+    font-size: 3.5rem;
+  }
+  .perc {
+    font-size: 3.5rem;
+    margin-top: 0.25em;
+  }
+}
+
+@media (max-width: 435px) {
+  .coverTitle {
+    h1 {
+      font-size: 35vw;
+    }
+  }
+
+  .coverBtm {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+}

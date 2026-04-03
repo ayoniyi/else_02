@@ -1,0 +1,90 @@
+@use "../../styles/mixins" as *;
+
+.inputBox {
+  //background: lavender;
+  margin: 2em 0 2.7em 0;
+  //color: black;
+  color: #fff;
+  @include flexRegular(column, flex-start);
+  position: relative;
+  overflow: hidden;
+  .field {
+    padding-top: 20px;
+    width: 100%;
+    height: 60px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+    background: none;
+  }
+  .fieldErr {
+    border: 1px solid #d41d28;
+  }
+  label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //background: lavender;
+    pointer-events: none;
+    //border-bottom: 1px solid black;
+    &::after {
+      content: "";
+      left: 0;
+      bottom: -1px;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border-bottom: 3px solid rgb(13, 192, 246);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+    .contentName {
+      position: absolute;
+      bottom: 20px;
+      left: 0.5em;
+      transition: all 0.3s ease;
+      font-size: 0.9em;
+      color: gray;
+    }
+  }
+  .field {
+    &:focus {
+      // border: 2px rgb(13, 192, 246);
+      transition: 0.3s ease-in;
+    }
+  }
+  input {
+    color: #fff;
+    padding-left: 0.5em;
+
+    &:focus + .labelName,
+    &:valid + .labelName {
+      .contentName {
+        transform: translateY(-130%);
+        font-size: 0.8em;
+        color: rgb(13, 192, 246);
+      }
+    }
+    &:focus + .labelName::after,
+    &:valid + .labelName::after {
+      transform: translateX(0%);
+    }
+  }
+}
+// .field2 {
+//   padding-top: 20px;
+//   width: 10%;
+//   height: 90px;
+//   border: 1px solid gray;
+//   border-radius: 6px;
+//   outline: none;
+//   background: none;
+// }
+@media (max-width: 1080px) {
+  .inputBox {
+    //background: lavender;
+    margin: 2em 0 1.9em 0;
+  }
+}

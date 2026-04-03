@@ -1,0 +1,672 @@
+.cover {
+  background: #000;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  pointer-events: none;
+  // z-index: -1;
+}
+.coverTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #000;
+  -webkit-text-stroke: 2px #ffffff29;
+
+  h1 {
+    font-size: 20vw;
+    font-weight: 400;
+    font-family: "Geist";
+    font-family: Presicav-Rg;
+    letter-spacing: -4px;
+  }
+}
+
+.coverBtm {
+  position: absolute;
+  bottom: 4.5vh;
+  // left: 50%;
+  right: 2em;
+  /* transform: translate(-50% -50%); */
+  // transform: translateX(-50%);
+  z-index: 2;
+  color: #ffffff5f;
+  width: fit-content;
+  h2 {
+    font-size: 5rem;
+    font-weight: 400;
+  }
+}
+
+// Page wrapper - root element for AnimatePresence page transitions
+.pageWrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.pageWrapperRes {
+  display: none;
+}
+
+// Spacer sets the vertical scroll distance; visual layer stays fixed
+.scrollSpacer {
+  height: 800vh;
+  width: 100%;
+}
+
+// Fixed visual container that houses the gallery and text layers
+.scrollContainer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.resContainer {
+  display: none;
+}
+
+// Visual container - handles entrance/exit animations
+// This is what the user sees animating in (scale, position)
+.visualContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  position: relative;
+  // Production smoothness: keep the page transition on the compositor.
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.visualContainerRes {
+  display: none;
+}
+// .containerFull {
+//   width: 100%;
+//   // transform: scale(0.9);
+//   height: 800vh !important;
+//   background-color: #ffffff;
+//   // background-color: #000;
+//   position: relative;
+// }
+
+.canvasWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.title {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 18vw;
+  height: 100%;
+  //font-family: "Geist";
+  font-family: Presicav-Rg;
+  font-size: 22.5vw;
+  font-size: 17.5vw;
+  font-weight: 400;
+  color: #000;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  letter-spacing: -4px;
+  filter: invert(1);
+
+  overflow: hidden;
+
+  // Smooth text animation styles
+  :global(.word) {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  :global(.char) {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  :global(.char span) {
+    display: inline-block;
+    will-change: transform, opacity;
+  }
+}
+
+// Nav section that scrolls horizontally with gallery - appears at top
+.navSection {
+  position: fixed;
+  top: 0.5em;
+  left: 150vw; // Starts further off-screen, appears in middle of gallery
+  display: flex;
+  gap: 300px;
+  z-index: 50;
+  pointer-events: auto;
+  white-space: nowrap;
+  color: #000;
+
+  a {
+    pointer-events: auto;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  p {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-family: Presicav-Light;
+    font-size: 18px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    pointer-events: auto;
+    white-space: normal;
+    text-align: left;
+    color: #000;
+    letter-spacing: -1px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.paragraphLeft,
+.paragraphRight {
+  letter-spacing: -1px;
+  line-height: 22px;
+  width: 100%;
+  width: 30vw;
+
+  pointer-events: auto;
+  white-space: normal;
+}
+
+.paragraphLeft,
+.paragraphRight {
+  text-align: left;
+}
+
+// Bottom text sections that scroll horizontally with gallery
+.textSection {
+  position: fixed;
+  bottom: 9em;
+  left: 150vw; // Starts further off-screen, appears in middle of gallery
+  display: flex;
+  gap: 200px;
+  z-index: 5;
+  pointer-events: none;
+  white-space: nowrap;
+  color: #000;
+  line-height: 10px;
+  // font-family: Beauty-Rg;
+  // background: pink;
+}
+
+.bottomNav {
+  position: fixed;
+  width: 30%;
+  width: 20%;
+  height: 5%;
+  //border: 1px solid #000;
+  bottom: 0.2em;
+
+  //bottom: 0;
+  left: 3em;
+  left: 40vw;
+  font-family: Presicav-Light;
+
+  //font-family: Beauty-Rg;
+  //
+  font-size: 0.9rem;
+  //left: 30vw;
+
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.btmNavItem {
+  //margin-right: 1.5rem;
+  pointer-events: all;
+  //padding: 0 1em;
+  position: relative;
+  overflow: visible; // Changed from hidden to allow .social to appear below
+  color: #000;
+  // height: 30px;
+  transition: color 0.4s ease;
+  cursor: pointer;
+
+  // Perfect centering
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Wrapper for the button itself to contain the clip-path overflow
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   border-radius: 8px 8px 8px 0;
+  //   overflow: hidden;
+  //   z-index: -2;
+  // }
+
+  // Pseudo-element for the fill effect
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: #000;
+  //   clip-path: circle(0% at 0% 100%);
+  //   transition: clip-path 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  //   border-radius: 8px 8px 8px 0;
+  //   z-index: -1;
+  // }
+
+  // &:hover {
+  //   color: #fff;
+
+  //   &::before {
+  //     clip-path: circle(150% at 0% 100%);
+  //   }
+  // }
+  p {
+    padding: 0;
+  }
+
+  p {
+    //clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    cursor: pointer;
+    display: inline-block;
+    // will-change: transform;
+    transition: color 0.2s;
+  }
+  p::after {
+    position: absolute;
+    content: "";
+    top: 70%;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background: #000;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s cubic-bezier(0.6, 0, 0.4, 1);
+  }
+  p:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.contactMenu {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  margin-bottom: 2.25em;
+  background: #000;
+  padding: 0.7em 1em;
+  padding: 1em 0;
+  border-radius: 8px 8px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  pointer-events: none;
+  clip-path: circle(0% at 0% 100%);
+  transition: clip-path 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  min-width: 100px;
+
+  p {
+    padding: 0.2em 1em;
+    color: #fff;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #ffffff88;
+
+    // Override the default nav item hover effect
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+
+  // p:last-child {
+  //   border-bottom: 0;
+  // }
+}
+
+.btmNavItem:nth-child(1):hover .contactMenu {
+  clip-path: circle(150% at 0% 100%);
+  pointer-events: auto;
+}
+
+.social {
+  position: absolute;
+  //top: 80%;
+  // top: -90%;
+  // left: 50%;
+  // margin-top: 0.5em;
+  bottom: 0%;
+  left: 50%;
+  margin-bottom: 2.2em;
+  background: #000;
+  padding: 0 0.5em 0 0.3em;
+  //border-radius: 0 8px 8px 8px;
+  border-radius: 8px 8px 8px 0px;
+  display: flex;
+  //flex-direction: column;
+  gap: 0.5em;
+  pointer-events: none;
+
+  // Initially hidden with clip-path
+  // clip-path: circle(0% at 0% 0%);
+  // transition: clip-path 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  clip-path: circle(0% at 0% 100%);
+  transition: clip-path 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+  // min-width: 100px;
+  // min-width: 150px;
+
+  .socialItem {
+    position: relative;
+    z-index: 1;
+    //margin-bottom: 0.5em;
+    // border-bottom: 1px solid #fff;
+    // border-bottom: 1px solid #ffffff88;
+    border-right: 1px solid #ffffff6a;
+    padding: 0.75em 0.4em 0.7em 0;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    width: 100%;
+    // border: 1px solid #fff;
+  }
+
+  img {
+    position: relative;
+    //width: 50%;
+    width: 20px;
+    height: 20px;
+    // border: 1px solid #fff;
+    //margin-right: 0.7em;
+    // position: relative;
+    // z-index: 1;
+    // margin-bottom: 0.5em;
+    // border-bottom: 1px solid #fff;
+    //padding: 0 1em;
+    // Scale is now controlled by GSAP
+  }
+
+  .socialItem:last-child {
+    margin-right: 0;
+    border: 0;
+    // padding: 0 0 0 0;
+    padding: 0.75em 0.4em 0.7em 0;
+  }
+}
+
+// Show social div on hover of second btmNavItem (social button)
+.btmNavItem:nth-child(2):hover .social {
+  clip-path: circle(150% at 0% 0%);
+  pointer-events: auto;
+}
+
+// End section that appears after gallery
+.endSection {
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 80px 12vw;
+  //background-color: #fff;
+  background: transparent;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: auto;
+  p {
+    margin-bottom: 1em;
+    span {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.bigQuote {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  // font-family: Beauty-Rg;
+  letter-spacing: -3px;
+
+  font-size: clamp(28px, 4.5vw, 56px);
+  // font-size: 5vw;
+  font-weight: 500;
+  // font-style: italic;
+  line-height: 1.4;
+  color: #000;
+  max-width: 75%;
+  text-align: left;
+}
+
+// @media (max-width: 768px) {
+//   .resContainer {
+//     display: block;
+//   }
+//   .visualContainerRes {
+//     display: flex;
+//   }
+//   .visualContainer {
+//     display: none;
+//   }
+// }
+
+.resContainer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  //overflow: auto;
+}
+
+.visualContainerRes {
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  position: relative;
+  // Production smoothness: keep the page transition on the compositor.
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  // backface-visibility: hidden;
+  // overflow-x: hidden;
+  overflow: auto;
+}
+
+.topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  //height: 100px;
+  background: #fff;
+  z-index: 100;
+  padding: 1em;
+  // border: 1px solid #000;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  justify-content: end;
+  h3:first-child {
+    font-size: 1.25rem;
+    font-family: Presicav-Rg;
+    letter-spacing: -1px;
+    color: #000;
+  }
+  h3:last-child {
+    font-size: 1rem;
+    font-family: Presicav-Light;
+    letter-spacing: -1px;
+    color: #000;
+  }
+}
+.heroRes {
+  margin-top: 7em;
+  padding: 1em;
+  width: 100%;
+}
+.titleRes {
+  // border: 1px solid #000;
+  // width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    font-family: Presicav-Rg;
+    font-size: 27.5vw;
+    text-align: center;
+  }
+}
+
+.imgBlock1 {
+  margin-top: 5em;
+}
+.imgRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+  img {
+    width: 49%;
+  }
+}
+.txtBlock1 {
+  margin-top: 5em;
+  p {
+    font-size: 1.25rem;
+    // font-family: Presicav-Light;
+    letter-spacing: -1px;
+    color: #000;
+  }
+}
+.imgBlock2 {
+  margin-top: 5em;
+}
+.imgL {
+  // width: 49%;
+  img {
+    width: 50%;
+    height: 100%;
+    min-height: 200px;
+    object-fit: cover;
+  }
+}
+.imgR {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 1em 0;
+  img {
+    width: 50%;
+    height: 100%;
+    min-height: 150px;
+    object-fit: cover;
+  }
+}
+.imgL1 {
+  img {
+    width: 50%;
+    height: 100%;
+    min-height: 180px;
+    object-fit: cover;
+  }
+}
+
+.endTxtBlock {
+  margin-top: 5em;
+  p {
+    font-size: 1.65rem;
+    letter-spacing: -1px;
+    color: #000;
+  }
+}
+
+.bottomNavRes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3em 0;
+  padding-bottom: 0.5em;
+  // border-bottom: 2px solid #000;
+  p {
+    font-family: Presicav-Light;
+    letter-spacing: -1px;
+    color: #000;
+  }
+}
+
+// @media (max-width: 768px) {
+//   .count .digit h1 {
+//     font-size: 3.5rem;
+//   }
+//   .perc {
+//     font-size: 3.5rem;
+//     margin-top: 0.25em;
+//   }
+// }
+
+// @media (max-width: 435px) {
+//   .coverTitle {
+//     h1 {
+//       font-size: 35vw;
+//     }
+//   }
+
+//   .coverBtm {
+//     h2 {
+//       font-size: 2rem;
+//     }
+//   }
+// }
+
+@media (max-width: 768px) {
+  .paragraphLeft,
+  .paragraphRight {
+    width: 90vw;
+  }
+  .bottomNav {
+    position: fixed;
+    width: 90%;
+  }
+  .bigQuote {
+    letter-spacing: -1px;
+    max-width: 100%;
+  }
+}

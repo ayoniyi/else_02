@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap");
+
+// Color variables
+$base-100: #000;
+$base-200: #e5e5e5;
+$base-300: #fff;
+
+.nav {
+  //border: 1px solid #000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  // padding: 1rem;
+  //padding: 0.2rem;
+  // margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+
+  // > div {
+  //   flex: 1;
+  // }
+}
+
+.navContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLogo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+
+  a,
+  p {
+    //width: 8rem;
+    text-align: center;
+    font-size: 1rem;
+    color: $base-100;
+    font-family: Presicav-Rg;
+    cursor: pointer;
+    line-height: 1;
+  }
+}
+
+.navCta {
+  display: flex;
+  justify-content: flex-end;
+
+  a,
+  p {
+    //font-family: "Instrument Serif", sans-serif;
+    // padding: 0.75rem 1.25rem;
+    padding: 0 1.25rem;
+    //border: 1px solid rgba(255, 255, 255, 0.15);
+    // border-radius: 5rem;
+    color: $base-100;
+    font-size: 1.2rem;
+    font-family: "Geist";
+    text-decoration: none;
+    font-weight: 300;
+    line-height: 1;
+    color: #000000a4;
+  }
+}
+
+.navToggleBtn {
+  // width: 60px;
+  // height: 60px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  // border: 1px solid rgba(255, 255, 255, 0.15);
+  // border: 1px solid #000;
+  // border-radius: 10rem;
+  cursor: pointer;
+
+  span {
+    width: 100%;
+    height: 1.25px;
+    background: $base-100;
+    will-change: transform;
+  }
+  p {
+    font-size: 0.9rem;
+    font-family: Presicav-Rg;
+    font-family: "Geist";
+  }
+}
+
+.bar1,
+.bar2 {
+  display: block;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+
+  &.active {
+    pointer-events: all;
+  }
+
+  a,
+  p {
+    text-decoration: none;
+    color: $base-100;
+    font-weight: 450;
+    line-height: 1;
+  }
+
+  .line {
+    position: relative;
+    transform: translateY(110%);
+    will-change: transform;
+  }
+}
+
+.menuBg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.menuBgLeft,
+.menuBgRight {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menuBgLeft {
+  left: 0;
+}
+
+.menuBgRight {
+  right: 0;
+}
+
+.menuBgLeftInner,
+.menuBgRightInner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.menuBgLeftInner {
+  background-color: $base-200;
+  transform-origin: 100% 50%;
+  transform: rotate(180deg) scale(2, 2);
+}
+
+.menuBgRightInner {
+  background-color: $base-300;
+  transform-origin: 0% 50%;
+  transform: rotate(-180deg) scale(2, 2);
+}
+
+.menuItems {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.menuHeading {
+  font-size: clamp(1rem, 2vw, 2rem);
+  line-height: 1.1;
+  font-family: Presicav-Rg;
+}
+
+.menuItemsCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  //font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  &:nth-child(1) {
+    a,
+    p {
+      //text-transform: uppercase;
+      font-size: clamp(1.5rem, 2.5vw, 4rem);
+      line-height: 1.1;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 88%;
+        left: 0;
+        width: 100%;
+        height: 2.5px;
+        background: #000;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.25s cubic-bezier(0.6, 0, 0.4, 1);
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    a,
+    p {
+      //font-family: "Instrument Serif", sans-serif;
+      font-size: clamp(1.65rem, 2.75vw, 3rem);
+      font-size: clamp(1rem, 2vw, 3.5rem);
+      line-height: 1.2;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 85%;
+        left: 0;
+        width: 100%;
+        height: 2.5px;
+        background: #000;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.25s cubic-bezier(0.6, 0, 0.4, 1);
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+}
+
+.menuLink {
+  //overflow: hidden;
+  p {
+    cursor: pointer;
+  }
+}
+
+.social {
+  //padding: 0 0.5em 0 0.3em;
+  display: flex;
+  gap: 0.5em;
+  //border: 1px solid #000;
+  .socialItem {
+    position: relative;
+    //border-right: 1px solid #ffffff6a;
+    // padding: 0.75em 0.4em 0.7em 0
+    width: 100%;
+    will-change: transform, opacity;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  img {
+    position: relative;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.menuFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.menuFooterCol {
+  display: flex;
+  gap: 2rem;
+
+  a,
+  p {
+    //text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+}
+
+// Mobile styles
+@media (max-width: 1000px) {
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navToggle {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navLogo {
+    position: static;
+    transform: none;
+    justify-content: flex-start;
+
+    a,
+    p {
+      text-align: left;
+    }
+  }
+
+  .navCta {
+    display: none;
+  }
+
+  .menuBgRight {
+    display: none;
+  }
+
+  .menuBgLeft {
+    width: 100%;
+  }
+
+  .menuItems {
+    padding: 6rem 2rem;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .menuItemsCol {
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    &:nth-child(1) {
+      justify-content: flex-start;
+    }
+
+    &:nth-child(2) {
+      justify-content: flex-end;
+    }
+  }
+
+  .menuFooter {
+    padding: 2rem 2rem;
+    align-items: flex-end;
+  }
+
+  .menuFooterCol {
+    flex-direction: column;
+    gap: 0;
+  }
+}
