@@ -456,20 +456,7 @@ const PortfolioLarge = () => {
           </div>
 
           {/* Nav sections scrolls horizontally with the gallery but appears on top of the gallery */}
-          <div className={`${style.navSection} horizontal-scroll-text`}>
-            <div onClick={() => handleNavigate("/aboutMain")}>
-              <p>Theory</p>
-            </div>
-            <Link href="/projects">
-              <p>Companies</p>
-            </Link>
-            <Link href="/projects">
-              <p>Perspective</p>
-            </Link>
-            <Link href="/projects">
-              <p>Team</p>
-            </Link>
-          </div>
+
 
           <div className={`${style.textSection} horizontal-scroll-text`}>
             <p className={style.paragraphLeft}>
@@ -486,57 +473,7 @@ const PortfolioLarge = () => {
           </div>
 
           <div className={style.bottomNav}>
-            {/* <div className={style.btmNavItem}>
-              <div onClick={() => handleNavigate("/aboutMain")}>
-                {" "}
-                <p>Theory</p>
-              </div>
-            </div>
-            <div className={style.btmNavItem} ref={socialButtonRef}>
-              <p>our socials</p>
-              <div className={style.social} ref={socialDivRef}>
-                <Image src={ig} alt="ig" />
-                <Image src={x} alt="x" />
-                <Image src={linkedin} alt="linkedin" />
-              </div>
-            </div>
-            <div className={style.btmNavItem}>
-              <p>Companies</p>
-            </div>
-            <div className={style.btmNavItem}>
-              <p>Perspective</p>
-            </div>
-            <div className={style.btmNavItem}>
-              <p>Team</p>
-            </div>
-            <div className={style.btmNavItem}>
-              <p>Contact </p>
-            </div>
-            <div className={style.btmNavItem}>
-              <p onClick={() => handleContactModal()}>contact</p>
-            </div> */}
-            {/* <div className={style.btmNavItem} ref={contactBtnRef}>
-              <p>Contact </p>
-              <div className={style.contactMenu} ref={contactDivRef}>
-                <p onClick={() => handleContactModal()}>Pitch</p>
-                <p>Partner</p>
-                <p>Say Hi</p>
-              </div>
-            </div> */}
-            {/* <div className={style.btmNavItem} ref={socialButtonRef}>
-              <p>Socials</p>
-              <div className={style.social} ref={socialDivRef}>
-                <div className={style.socialItem}>
-                  <Image src={ig} alt="ig" />
-                </div>
-                <div className={style.socialItem}>
-                  <Image src={x} alt="x" />
-                </div>
-                <div className={style.socialItem}>
-                  <Image src={linkedin} alt="linkedin" />
-                </div>
-              </div>
-            </div> */}
+
           </div>
 
           {/* End section that appears after gallery - also scrolls horizontally */}

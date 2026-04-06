@@ -273,40 +273,10 @@ const Companies = () => {
         // {...animate(scale)}
         ref={containerRef}
       >
-        {/* <div className={style.intro}> */}
-        {/* <p>A collection of selected works</p> */}
-        {/* <h2>COMPANIES PAGE</h2> */}
-        {/* <h3>A selection of companies we've worked with</h3> */}
-        {/* </div> */}
         <div className={style.pageTitle}>
           <h2>Companies</h2>
         </div>
-        {/* <NewNav
-          logo="else"
-          ctaText="Start"
-          ctaHref="/start"
-          leftMenuLinks={[
-            { href: "/theory", label: "Theory" },
-            { href: "/companies", label: "Companies" },
-            { href: "/perspectives", label: "Perspectives" },
-            { href: "/team", label: "Team" },
-            { href: "/portfolio", label: "Portfolio" },
-          ]}
-          rightMenuLinks={[
-            { href: "/aboutMain", label: "About" },
-            { href: "/work", label: "Work" },
-            { href: "/contact", label: "Contact" },
-            { href: "/blog", label: "Blog" },
-            { href: "/resources", label: "Resources" },
-          ]}
-          footerLinks={[
-            { href: "/terms", label: "Terms" },
-            { href: "/privacy", label: "Privacy" },
-            { href: "/cookies", label: "Cookies" },
-          ]}
-          copyright="© 2025 else"
-          onNavigate={handleNavigate}
-        /> */}
+
         <section className={style.spotlight} ref={spotlightRef}>
           <div className={style.projectIndex}>
             <h1 ref={projectIndexRef}>01/10</h1>

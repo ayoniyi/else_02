@@ -148,7 +148,8 @@ const Theory = () => {
             her first day at Nordstrom, Julie Bornstein sat in her new bosss
             office. Across from her was Dan Nordstrom, the companys co-president
             and CEO of its newly spun-out ecommerce division. Julie, he said,
-            it's all about personalization.
+            it&apos;s all about personalization.
+
           </p>
         </div>
       </motion.div>

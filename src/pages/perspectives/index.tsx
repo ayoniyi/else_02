@@ -20,7 +20,7 @@ const PEOPLE_DATA: Person[] = [
     id: 1,
     name: "Julie Bornstein",
     description:
-      "WEEKEND MALLRAT. CHAMPION OF WOMEN. RETAIL'S DIGITAL PIONEER.",
+      "WEEKEND MALLRAT. CHAMPION OF WOMEN. RETAIL&apos;S DIGITAL PIONEER.",
     company: "Daydream",
     images: [
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800",
@@ -32,7 +32,7 @@ const PEOPLE_DATA: Person[] = [
     id: 2,
     name: "Assaf Rappaport",
     description:
-      "GLOBAL TECH ADVOCATE. TEAM CURATOR. SOFTWARE'S FASTEST PACE-SETTER.",
+      "GLOBAL TECH ADVOCATE. TEAM CURATOR. SOFTWARE&apos;S FASTEST PACE-SETTER.",
     company: "Wiz",
     images: [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",

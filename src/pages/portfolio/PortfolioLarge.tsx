@@ -458,36 +458,9 @@ const PortfolioLarge = () => {
           </div>
 
           {/* Nav sections scrolls horizontally with the gallery but appears on top of the gallery */}
-          {/* <div className={`${style.navSection} horizontal-scroll-text`}>
-            <div onClick={() => handleNavigate("/aboutMain")}>
-              <p>Theory</p>
-            </div>
-            <Link href="/projects">
-              <p>Companies</p>
-            </Link>
-            <Link href="/projects">
-              <p>Perspective</p>
-            </Link>
-            <Link href="/projects">
-              <p>Team</p>
-            </Link>
-          </div> */}
 
-          {/* <div className={style.topNavSection}>
-            <div className={style.topNavItem}>
-              <p onClick={() => handleNavigate("/theory")}>Theory</p>
-            </div>
 
-            <div className={style.topNavItem}>
-              <p onClick={() => handleNavigate("/companies")}>Companies</p>
-            </div>
-            <div className={style.topNavItem}>
-              <p onClick={() => handleNavigate("/perspectives")}>Perspective</p>
-            </div>
-            <div className={style.topNavItem}>
-              <p onClick={() => handleNavigate("/team/teamMember")}>Team</p>
-            </div>
-          </div> */}
+
 
           <Navbar handleNavigate={handleNavigate} />
 
@@ -506,30 +479,7 @@ const PortfolioLarge = () => {
             </p>
           </div>
 
-          {/* <div className={style.bottomNav}>
-            <div className={style.btmNavItem} ref={contactBtnRef}>
-              <p>Contact </p>
-              <div className={style.contactMenu} ref={contactDivRef}>
-                <p onClick={() => handleContactModal()}>Pitch</p>
-                <p>Partner</p>
-                <p>Say Hi</p>
-              </div>
-            </div>
-            <div className={style.btmNavItem} ref={socialButtonRef}>
-              <p>Socials</p>
-              <div className={style.social} ref={socialDivRef}>
-                <div className={style.socialItem}>
-                  <Image src={ig} alt="ig" />
-                </div>
-                <div className={style.socialItem}>
-                  <Image src={x} alt="x" />
-                </div>
-                <div className={style.socialItem}>
-                  <Image src={linkedin} alt="linkedin" />
-                </div>
-              </div>
-            </div>
-          </div> */}
+
 
           {/* End section that appears after gallery - also scrolls horizontally */}
           <div className={`${style.endSection} horizontal-scroll-end`}>
