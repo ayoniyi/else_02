@@ -15,6 +15,8 @@ import Head from "next/head";
 import ContactFixed from "@/components/ContactFixed/ContactFixed";
 import { useTransition } from "@/context/TransitionContext";
 import Link from "next/link";
+import Navbar from "@/components/Navbar/Navbar";
+
 //import Inner from "@/components/PageTransition/Inner";
 
 // Register GSAP plugin
@@ -487,35 +489,8 @@ const PortfolioLarge = () => {
             </div>
           </div> */}
 
-          <div className={style.fullNav}>
-            <div className={style.fullNavL}>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/portfolio")}>Home</p>
-              </div>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/theory")}>Theory</p>
-              </div>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/companies")}>Companies</p>
-              </div>
-            </div>
-            <div className={style.fullNavC}>
-              <p>else</p>
-            </div>
-            <div className={style.fullNavR}>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/perspectives")}>
-                  Perspective
-                </p>
-              </div>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/team/teamMember")}>Team</p>
-              </div>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/contact")}>Contact</p>
-              </div>
-            </div>
-          </div>
+          <Navbar handleNavigate={handleNavigate} />
+
 
           <div className={`${style.textSection} horizontal-scroll-text`}>
             <p className={style.paragraphLeft}>

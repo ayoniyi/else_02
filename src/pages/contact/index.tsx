@@ -5,7 +5,9 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import TextInput from "@/components/TextInput/TextInput";
 import TextArea from "@/components/TextInput/TextArea";
+import Navbar from "@/components/Navbar/Navbar";
 import Image from "next/image";
+
 
 import ig from "@/pages/icons/ig.svg";
 import x from "@/pages/icons/x.svg";
@@ -200,35 +202,8 @@ const Contact = () => {
         {...animate(scale)}
         ref={containerRef}
       >
-        <div className={style.fullNav}>
-            <div className={style.fullNavL}>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/portfolio")}>Home</p>
-              </div>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/theory")}>Theory</p>
-              </div>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/companies")}>Companies</p>
-              </div>
-            </div>
-            <div className={style.fullNavC}>
-              <p>else</p>
-            </div>
-            <div className={style.fullNavR}>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/perspectives")}>
-                  Perspective
-                </p>
-              </div>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/team/teamMember")}>Team</p>
-              </div>
-              <div className={style.topNavItem}>
-                <p onClick={() => handleNavigate("/contact")}>Contact</p>
-              </div>
-            </div>
-          </div>
+          <Navbar handleNavigate={handleNavigate} />
+
 
         <div className={style.contactContainer}>
         

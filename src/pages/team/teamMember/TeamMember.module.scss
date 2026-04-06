@@ -496,3 +496,47 @@
     font-style: italic;
   }
 }
+@media (max-width: 992px) {
+  .coverTitle h1 {
+    font-size: 30vw;
+  }
+  .coverBtm h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 1.75rem;
+    margin: 3rem 0;
+    text-align: center;
+  }
+  .heroImage {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .bodyTextCentered {
+    text-align: left;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .coverTitle h1 {
+    font-size: 35vw;
+  }
+  .coverBtm h2 {
+    font-size: 2rem;
+  }
+  .heroTitle {
+    font-size: 1.5rem;
+  }
+  .tabs {
+    padding: 0 0.5rem;
+    gap: 0.15rem;
+  }
+  .tab {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}

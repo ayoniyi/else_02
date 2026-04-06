@@ -1,0 +1,119 @@
+.fullNav {
+  position: fixed;
+  top: 0.5rem;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 60; // Keep nav above the fading-in gallery canvas
+}
+
+.fullNavL {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fullNavC {
+  width: 30%;
+  font-weight: 600;
+  font-family: Presicav-Rg;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.fullNavR {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.topNavItem {
+  margin-right: 4rem;
+  pointer-events: all;
+  position: relative;
+  overflow: visible;
+  color: #000;
+  transition: color 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.2s;
+    font-family: Presicav-Light;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  p::after {
+    position: absolute;
+    content: "";
+    top: 88%;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background: #000;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s cubic-bezier(0.6, 0, 0.4, 1);
+  }
+
+  p:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.fullNavR .topNavItem {
+  margin-right: 0;
+  margin-left: 0; 
+}
+
+.mobileToggle {
+  display: none;
+  cursor: pointer;
+  p {
+    margin: 0;
+    font-family: Presicav-Light;
+    font-size: 1rem;
+    color: #000;
+  }
+}
+
+@media (max-width: 992px) {
+  .fullNavL, .fullNavR {
+    display: none;
+  }
+  .mobileToggle {
+    display: flex;
+    align-items: center;
+    width: 20%;
+  }
+  .fullNavC {
+    width: 60%;
+  }
+}
+
+@media (max-width: 420px) {
+  .fullNav {
+    padding: 0 5%;
+    width: 90%;
+    margin: 0 5%;
+  }
+  .fullNavC {
+    font-size: 1rem;
+  }
+  .mobileToggle p {
+    font-size: 0.9rem;
+  }
+}
+

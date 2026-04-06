@@ -284,3 +284,73 @@
 .singleInput {
   margin-bottom: 2rem;
 }
+@media (max-width: 992px) {
+  .coverTitle h1 {
+    font-size: 30vw;
+  }
+  .coverBtm h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+    height: auto;
+  }
+  .contactLeft, .contactRight {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 6rem 2rem 2rem;
+  }
+  .contactRight {
+    padding-top: 2rem;
+  }
+  .contactLeft {
+    justify-content: flex-start;
+    h2 {
+      font-size: 1.75rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .contactTabs {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .formTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .formBody {
+    width: 100%;
+  }
+  .bottom {
+    margin-top: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .coverTitle h1 {
+    font-size: 35vw;
+  }
+  .coverBtm h2 {
+    font-size: 2rem;
+  }
+  .contactTab {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+  .formTitle {
+    font-size: 1.25rem;
+  }
+  .contactLeft h2 {
+    font-size: 1.5rem;
+  }
+}

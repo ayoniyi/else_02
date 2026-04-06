@@ -276,13 +276,60 @@
   will-change: transform;
 }
 
-@media (max-width: 1000px) {
-  .projectImages {
-    width: calc(100% - 4rem);
-    gap: 25svh;
+@media (max-width: 992px) {
+  .coverTitle h1 {
+    font-size: 30vw;
   }
-
-  .projectNames p {
-    color: #fff !important;
+  .coverBtm h2 {
+    font-size: 3rem;
+  }
+  .fullNav {
+    display: none; // Handled by global Navbar component's own responsive styles
+  }
+  .pageTitle {
+    padding-top: 5rem;
+    h2 {
+      font-size: 2.25rem;
+    }
   }
 }
+
+@media (max-width: 768px) {
+  .projectImages {
+    width: 60%;
+  }
+  .projectNames {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+  section {
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .coverTitle h1 {
+    font-size: 35vw;
+  }
+  .coverBtm h2 {
+    font-size: 2rem;
+  }
+  .pageTitle h2 {
+    font-size: 1.75rem;
+  }
+  .projectImages {
+    width: 85%;
+  }
+  .projectIndex h1 {
+    font-size: 2.5rem !important;
+  }
+}
+

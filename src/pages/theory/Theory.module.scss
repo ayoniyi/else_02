@@ -146,3 +146,33 @@
     transform-origin: left;
   }
 }
+@media (max-width: 992px) {
+  .coverTitle h1 {
+    font-size: 30vw;
+  }
+  .coverBtm h2 {
+    font-size: 3rem;
+  }
+  .hero {
+    margin-top: 6em;
+    width: 95%;
+  }
+  .heroText {
+    width: 80%;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .coverTitle h1 {
+    font-size: 35vw;
+  }
+  .coverBtm h2 {
+    font-size: 2rem;
+  }
+  .heroText {
+    width: 90%;
+    font-size: 1rem;
+    margin-top: 1.5em;
+  }
+}

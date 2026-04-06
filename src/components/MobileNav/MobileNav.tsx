@@ -134,9 +134,9 @@ const MobileNav: React.FC<MobileNavProps> = ({
           <p onClick={handleClose}>Close</p>
         </div>
         <div className={style.navItems}>
-          <div onClick={() => handleNavigate("/aboutMain")}>
+          <div onClick={() => handleNavigate("/portfolio")}>
             <SplitText
-              text="Theory"
+              text="Home"
               tag="p"
               immediate={true}
               animationDelay={0.2}
@@ -147,9 +147,9 @@ const MobileNav: React.FC<MobileNavProps> = ({
               delay={30}
             />
           </div>
-          <div onClick={() => handleNavigate("/projects")}>
+          <div onClick={() => handleNavigate("/theory")}>
             <SplitText
-              text="Companies"
+              text="Theory"
               tag="p"
               immediate={true}
               animationDelay={0.4}
@@ -160,9 +160,9 @@ const MobileNav: React.FC<MobileNavProps> = ({
               delay={30}
             />
           </div>
-          <div onClick={() => handleNavigate("/contact")}>
+          {/* <div onClick={() => handleNavigate("/companies")}>
             <SplitText
-              text="Perspective"
+              text="Companies"
               tag="p"
               immediate={true}
               animationDelay={0.6}
@@ -172,10 +172,10 @@ const MobileNav: React.FC<MobileNavProps> = ({
               duration={0.6}
               delay={30}
             />
-          </div>
-          <div onClick={() => handleNavigate("/contact")}>
+          </div> */}
+          <div onClick={() => handleNavigate("/perspectives")}>
             <SplitText
-              text="Team"
+              text="Perspective"
               tag="p"
               immediate={true}
               animationDelay={0.8}
@@ -186,7 +186,34 @@ const MobileNav: React.FC<MobileNavProps> = ({
               delay={30}
             />
           </div>
+          <div onClick={() => handleNavigate("/team/teamMember")}>
+            <SplitText
+              text="Team"
+              tag="p"
+              immediate={true}
+              animationDelay={1.0}
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              duration={0.6}
+              delay={30}
+            />
+          </div>
+          <div onClick={() => handleNavigate("/contact")}>
+            <SplitText
+              text="Contact"
+              tag="p"
+              immediate={true}
+              animationDelay={1.2}
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              duration={0.6}
+              delay={30}
+            />
+          </div>
         </div>
+
       </motion.div>
     </motion.div>
   );
